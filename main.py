@@ -10,15 +10,14 @@ def encode_password(password):
             output += str(digit - 10)
     return output
 
-#Chuyang is the Goat bro
 def decode_password(password):
     output = ""
     for digit in password:
         digit = int(digit) - 3
-        if digit > 0:
-            output += str(digit)
+        if digit < 0:
+            output += str(digit + 10)
         else:
-            output += "0"
+            output += str(digit)
     return output
 
 # main loop
@@ -40,3 +39,6 @@ while True:
             print(f"The encoded password is {encoded_password}, and the original password is {decode_password(encoded_password)}.\n")
         case "3":  # quit
             break
+        case _:  # invalid input
+            print("Invalid input!\n")
+            continue
