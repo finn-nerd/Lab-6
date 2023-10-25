@@ -10,8 +10,16 @@ def encode_password(password):
             output += str(digit - 10)
     return output
 
+#Chuyang is the Goat bro
 def decode_password(password):
-    pass # change this to actual code
+    output = ""
+    for digit in password:
+        digit = int(digit) - 3
+        if digit > 0:
+            output += str(digit)
+        else:
+            output += "0"
+    return output
 
 # main loop
 while True:
